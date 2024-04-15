@@ -31,9 +31,8 @@ print(get_number_ticket(1, 1000, 5))
 import re
 
 def normalize_phone(phone_number):
-    # Видаляємо всі символи, крім цифр
-    cleaned_number = re.sub(r'\D', '', phone_number)
-    return '+' + cleaned_number if cleaned_number.startswith('380') else '+38' + cleaned_number
+    cleaned_number = re.sub(r'\D', '', phone_number) # Видаляємо всі символи, крім цифр
+    return '+' + cleaned_number if cleaned_number.startswith('380') else '+38' + cleaned_number #повертаємо телефон в форматі +380ХХХХХХХХХ
 
 # Приклад використання
 raw_numbers = [
