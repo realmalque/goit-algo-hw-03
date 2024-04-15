@@ -33,14 +33,7 @@ import re
 def normalize_phone(phone_number):
     # Видаляємо всі символи, крім цифр та '+'
     cleaned_number = re.sub(r'\D', '', phone_number)
-    
-    # Перевіряємо, чи номер починається з '+'
-    if cleaned_number.startswith('+'):
-        # Якщо так, то нічого не змінюємо
-        return cleaned_number
-    else:
-        # Якщо ні, додаємо міжнародний код для України '+38'
-        return '+38' + cleaned_number[2:] if cleaned_number.startswith('380') else '+38' + cleaned_number
+    return '+38' + cleaned_number[2:] if cleaned_number.startswith('380') else '+38' + cleaned_number
 
 # Приклад використання
 raw_numbers = [
