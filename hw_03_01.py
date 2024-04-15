@@ -25,3 +25,35 @@ def get_number_ticket(min, max, quantity):
     return winner_list
 
 print(get_number_ticket(1, 1000, 5))
+
+#_____________________________ЗАДАЧА 3 ______________________________________
+
+import re
+
+def normalize_phone(phone_number):
+    # Видаляємо всі символи, крім цифр та '+'
+    cleaned_number = re.sub(r'\D', '', phone_number)
+    
+    # Перевіряємо, чи номер починається з '+'
+    if cleaned_number.startswith('+'):
+        # Якщо так, то нічого не змінюємо
+        return cleaned_number
+    else:
+        # Якщо ні, додаємо міжнародний код для України '+38'
+        return '+38' + cleaned_number[2:] if cleaned_number.startswith('380') else '+38' + cleaned_number
+
+# Приклад використання
+raw_numbers = [
+    "067\\t123 4567",
+    "(095) 234-5678\\n",
+    "+380 44 123 4567",
+    "380501234567",
+    "    +38(050)123-32-34",
+    "     0503451234",
+    "(050)8889900",
+    "38050-111-22-22",
+    "38050 111 22 11   ",
+]
+
+sanitized_numbers = [normalize_phone(num) for num in raw_numbers]
+print("Нормалізовані номери телефонів для SMS-розсилки:", sanitized_numbers)
