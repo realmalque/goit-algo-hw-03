@@ -374,98 +374,212 @@ while my_list:
     
 # print(sum)
 
-from datetime import datetime
+# from datetime import datetime
 
-date = datetime(year = 2002, month = 9, day = 11)
-ordinal = date.toordinal()
-times = datetime.timestamp(date)
-dt_obj = datetime.fromtimestamp(times)
-print(ordinal, times, dt_obj , sep="\n")
+# date = datetime(year = 2002, month = 9, day = 11)
+# ordinal = date.toordinal()
+# times = datetime.timestamp(date)
+# dt_obj = datetime.fromtimestamp(times)
+# print(ordinal, times, dt_obj , sep="\n")
 
-now = datetime.now()
+# now = datetime.now()
 
-# Форматування дати і часу
-formatted_date = now.strftime("%Y-%m-%d %H:%M:%S")
-print(formatted_date) 
+# # Форматування дати і часу
+# formatted_date = now.strftime("%Y-%m-%d %H:%M:%S")
+# print(formatted_date) 
 
-# Форматування лише дати
-formatted_date_only = now.strftime("%A, %d %B %Y")
-print(formatted_date_only)
+# # Форматування лише дати
+# formatted_date_only = now.strftime("%A, %d %B %Y")
+# print(formatted_date_only)
 
-# Форматування лише часу
-formatted_time_only = now.strftime("%I:%M %p")
-print(formatted_time_only)  
+# # Форматування лише часу
+# formatted_time_only = now.strftime("%I:%M %p")
+# print(formatted_time_only)  
 
-# Форматування лише дати
-formatted_date_only = now.strftime("%d.%m.%Y")
-print(formatted_date_only)
+# # Форматування лише дати
+# formatted_date_only = now.strftime("%d.%m.%Y")
+# print(formatted_date_only)
 
-from datetime import datetime
+# from datetime import datetime
 
-# Поточна дата та час
-now = datetime.now()
+# # Поточна дата та час
+# now = datetime.now()
 
-# Конвертація у формат ISO 8601
-iso_format = now.isoformat()
-print(iso_format)
+# # Конвертація у формат ISO 8601
+# iso_format = now.isoformat()
+# print(iso_format)
 
-from datetime import datetime
+# from datetime import datetime
 
-# Створення об'єкта datetime
-now = datetime.now()
+# # Створення об'єкта datetime
+# now = datetime.now()
 
-# Отримання ISO календаря
-iso_calendar = now.isocalendar()
+# # Отримання ISO календаря
+# iso_calendar = now.isocalendar()
 
-print(f"ISO рік: {iso_calendar[0]}, ISO тиждень: {iso_calendar[1]}, ISO день тижня: {iso_calendar[2]}")
+# print(f"ISO рік: {iso_calendar[0]}, ISO тиждень: {iso_calendar[1]}, ISO день тижня: {iso_calendar[2]}")
 
-from datetime import datetime, timezone
+# from datetime import datetime, timezone
 
-local_now = datetime.now()
-utc_now = datetime.now(timezone.utc)
+# local_now = datetime.now()
+# utc_now = datetime.now(timezone.utc)
 
-print(local_now)
-print(utc_now)  # Виведе поточний час в UTC
+# print(local_now)
+# print(utc_now)  # Виведе поточний час в UTC
 
-from datetime import datetime, timezone, timedelta
+# from datetime import datetime, timezone, timedelta
 
-utc_time = datetime.now(timezone.utc)
+# utc_time = datetime.now(timezone.utc)
 
-# Створення часової зони для Східного часового поясу (UTC-5)
-eastern_time = utc_time.astimezone(timezone(timedelta(hours=-5)))
-# Перетворює час UTC в час Східного часового поясу
-print(eastern_time)  
-local_time = datetime.now()
-utc_time = local_time.astimezone(timezone.utc)
-print(utc_time)  # Виведе час в UTC
-import time
+# # Створення часової зони для Східного часового поясу (UTC-5)
+# eastern_time = utc_time.astimezone(timezone(timedelta(hours=-5)))
+# # Перетворює час UTC в час Східного часового поясу
+# print(eastern_time)  
+# local_time = datetime.now()
+# utc_time = local_time.astimezone(timezone.utc)
+# print(utc_time)  # Виведе час в UTC
+# import time
 
-current_time = time.time()
-print(f"Поточний час: {current_time}")
+# current_time = time.time()
+# print(f"Поточний час: {current_time}")
 
 
 
-name = "Alice"
-formatted = f"{name:^10}"
-print(formatted)  # Виведе: '     Alice' (вирівнювання праворуч)
+# name = "Alice"
+# formatted = f"{name:^10}"
+# print(formatted)  # Виведе: '     Alice' (вирівнювання праворуч)
 
+
+# import re
+
+# text = "Вивчення Python може бути веселим."
+# pattern = "Python"
+# match = re.search(pattern, text)
+
+# if match:
+#     print("Знайдено:", match.string)
+# else:
+#     print("Не знайдено.")
+
+# import re
+
+# text = "Моя електронна адреса: example@example.com"
+# pattern = r"\w+@\w+\.\w+"
+# match = re.search(pattern, text)
+
+# if match:
+#     print("Електронна адреса:", match.group())
+# from datetime import datetime, date, timedelta
+
+# from datetime import datetime, date, timedelta
+
+
+# def string_to_date(date_string):
+#     return datetime.strptime(date_string, "%Y.%m.%d").date()
+
+
+# def date_to_string(date):
+#     return date.strftime("%Y.%m.%d")
+
+
+# def prepare_user_list(user_data):
+#     prepared_list = []
+#     for user in user_data:
+#         prepared_list.append({"name": user["name"], "birthday": string_to_date(user["birthday"])})
+#     return prepared_list
+
+
+# def find_next_weekday(start_date, weekday):
+#     days_ahead = weekday - start_date.weekday()
+#     if days_ahead <= 0:
+#         days_ahead += 7
+#     return start_date + timedelta(days=days_ahead)
+# def adjust_for_weekend(birthday):
+#     if birthday.weekday() >= 5:
+#         return find_next_weekday(birthday, 0)
+#     return birthday
+# def get_upcoming_birthdays(users, days=7):
+#     upcoming_birthdays = []
+#     today = date.today()
+#     for user in users:
+#         birthday_this_year = user["birthday"].replace(year=today.year)
+#         """
+#         Додайте на цьому місці перевірку, чи не буде 
+#         припадати день народження вже наступного року.
+#         """
+#         if (birthday_this_year - today).days <= 0:
+#             return birthday_this_year + timedelta(days=abs(birthday_this_year - today))
+#         if 0 <= (birthday_this_year - today).days <= days:
+#             return find_next_weekday(birthday_this_year,0)
+#             """
+#             Додайте перенесення дати привітання на наступний робочий день,
+#             якщо день народження припадає на вихідний. 
+#             """
+#             congratulation_date_str = date_to_string(birthday_this_year)
+#             upcoming_birthdays.append({"name": user["name"], "congratulation_date": congratulation_date_str})
+#     return upcoming_birthdays
+
+
+
+
+# import re
+
+# pattern = '^a...s$'
+# test_string = 'abyss'
+# result = re.match(pattern, test_string)
+
+# if result:
+#   print("Search successful.")
+# else:
+#   print("Search unsuccessful.")	
+
+# import re
+
+# txt = "mn"
+
+
+# x = re.findall("ma*n", txt)
+
+# print(x)
+
+# elements = ['earth', 'air', 'fire', 'water']
+# result = ', '.join(elements)
+# print(result.title())  # Виведе: 'earth, air, fire, water'
+
+# for i in range(8):
+#     s = f"int: {i:d};  hex: {i:#x};  oct: {i:#o};  bin: {i:#b}"
+#     print(s)
+
+# width = 5
+# for num in range(12):
+#     print(f'|{num:^10} | {num**2:^10} | {num**3:^10}|')
+import re
+
+email = "username@domain.com"
+pattern = r"(\w+)@(\w+\.\w+)"
+match = re.search(pattern, email)
+
+if match:
+    user_name = match.group(1)
+    domain_name = match.group(2)
+    print("Ім'я користувача:", user_name)
+    print("Домен:", domain_name)
 
 import re
 
-text = "Вивчення Python може бути веселим."
-pattern = "Python"
-match = re.search(pattern, text)
+text = "Python - це проста, але потужна мова програмування."
+pattern = r"\w+"
+matches = re.findall(pattern, text)
 
-if match:
-    print("Знайдено:", match.string)
-else:
-    print("Не знайдено.")
+print(matches)  # Виведе список всіх слів у рядку
 
-import re
+url_search = "<https://www.google.com/search?q=Cat+and+dog&ie=utf-8&oe=utf-8&aq=t>"
+_, query = url_search.split('?')
+print(query)
 
-text = "Моя електронна адреса: example@example.com"
-pattern = r"\w+@\w+\.\w+"
-match = re.search(pattern, text)
+obj_query = {}
+for el in query.split('&'):
+    key, value = el.split('=')
+    obj_query.update({key: value.replace('+', ' ')})
+print(obj_query)
 
-if match:
-    print("Електронна адреса:", match.group())
