@@ -21,9 +21,9 @@
 # byte_string = b'Hello world!'
 # Перетворення списку чисел у байт-рядок
 # numbers = [0, 128, 255]
-# byte_numbers = bytes(numbers)
-# print(byte_numbers)  # Виведе байтове представлення чисел
-s = "Привіт!"
+# # byte_numbers = bytes(numbers)
+# # print(byte_numbers)  # Виведе байтове представлення чисел
+# s = "Привіт!"
 
 # utf8 = s.encode()
 # print(f"UTF-8: {utf8}")
@@ -37,4 +37,33 @@ s = "Привіт!"
 # s_from_utf16 = utf16.decode("utf-16")
 # print(s_from_utf16 == s)
 
-print(dir())
+
+def parse_input(user_input):
+    cmd, *args = user_input.split()
+    cmd = cmd.strip().lower()
+    return cmd, *args
+
+def add_contact(args, contacts):
+    name, phone = args
+    contacts[name] = phone
+    return "Contact added."
+
+def main():
+    contacts = {}
+    print("Welcome to the assistant bot!")
+    while True:
+        user_input = input("Enter a command: ")
+        command, *args = parse_input(user_input)
+
+        if command in ["close", "exit"]:
+            print("Good bye!")
+            break
+        elif command == "hello":
+            print("How can I help you?")
+        elif command == "add":
+            print(add_contact(args, contacts))
+        else:
+            print("Invalid command.")
+
+if __name__ == "__main__":
+    main()
