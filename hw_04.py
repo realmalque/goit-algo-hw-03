@@ -3,8 +3,8 @@ from pathlib import Path
 
 
 def total_salary(path):
-
-    with open('salary_list.txt', 'r') as file:
+    path = Path(path)
+    with open('salary_list.txt', 'r', encoding='utf-8') as file:
         try:
             salary = list()
             for line in file:
@@ -25,12 +25,14 @@ print(f"Загальна сума заробітної плати: {total}, Се
 from pathlib import Path
 
 def get_cats_info(path):
-    with open('Cats_info.txt', 'r') as file:
+    path = Path(path)
+    with open('Cats_info.txt', 'r', encoding='utf-8') as file:
         try:
-            cats_info = list()
+            cats_info = []
             for line in file:
-                every_cat = {'id':line.split(',')[0],'name':line.split(',')[1],'age':line.split(',')[2].strip()}    
-                cats_info.append(every_cat)
+                id,name,age = line.strip().split(',')
+                cat_dict = {'id':id, 'name':name, 'age':age}
+                cats_info.append(cat_dict)
             return cats_info
          
         except OSError:
